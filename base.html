@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Учебный проект Flask{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+        nav { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        nav a { margin-right: 15px; text-decoration: none; }
+        form { display: flex; gap: 10px; margin-bottom: 20px; }
+        input[type="text"] { flex: 1; padding: 8px; font-size: 16px; }
+        button { padding: 8px 16px; font-size: 16px; cursor: pointer; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ddd; }
+        .done { text-decoration: line-through; color: gray; }
+        .actions a { margin-left: 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Задачи</a>
+        <a href="/api/tasks" target="_blank">JSON API</a>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
